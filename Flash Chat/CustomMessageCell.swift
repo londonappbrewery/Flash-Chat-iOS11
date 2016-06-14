@@ -18,7 +18,10 @@ class CustomMessageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code goes here
+        
+        
+        
     }
 
 

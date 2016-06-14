@@ -14,26 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    //TODO: Set your Application and Client Keys
     
-    
-    // Register your application with Parse in this method:
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //TODO: Initialise Parse with your keys
+        //TODO: Initialise and Configure your Firebase
         
-
-        
-        //TODO: Uncomment this block to test your Parse integration
-        /*
-        
-            let object = PFObject(className: "Ingredients")
-            object.addObject("Barley", forKey: "favouriteGrain")
-            object.addObject("Hops", forKey: "favouritePlant")
-            object.addObject("Yeast", forKey: "favouriteMicroorganism")
-            object.saveInBackground()
-        
-        */
         
         return true
     }

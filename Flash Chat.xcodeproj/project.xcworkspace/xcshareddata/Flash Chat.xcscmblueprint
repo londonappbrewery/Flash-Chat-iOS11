@@ -1,15 +1,15 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E7CA31C7EE91A5CFE9A6C214ECC04443516A7C12",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7DAB0FC089792D65815005FA0FB0E291EA32748D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "E7CA31C7EE91A5CFE9A6C214ECC04443516A7C12" : 0,
+    "7DAB0FC089792D65815005FA0FB0E291EA32748D" : 0,
     "CC7D4C83F89543DC5D7313A87002A3A288282EF1" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6090F00C-470E-4A1D-9F98-CEFBE5178440",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "E7CA31C7EE91A5CFE9A6C214ECC04443516A7C12" : "Flash%20Chat\/",
+    "7DAB0FC089792D65815005FA0FB0E291EA32748D" : "Flash%20Chat\/",
     "CC7D4C83F89543DC5D7313A87002A3A288282EF1" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Flash Chat",
@@ -17,14 +17,14 @@
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Flash Chat.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/londonappbrewery\/Flash-Chat.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7DAB0FC089792D65815005FA0FB0E291EA32748D"
+    },
+    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/londonappbrewery\/Vixion.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CC7D4C83F89543DC5D7313A87002A3A288282EF1"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/londonappbrewery\/Flash-Chat.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E7CA31C7EE91A5CFE9A6C214ECC04443516A7C12"
     }
   ]
 }

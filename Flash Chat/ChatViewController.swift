@@ -45,20 +45,8 @@ class ChatViewController: UIViewController {
         
         ///////////////////////////////////
     }
-    
-    //TODO: Make a viewWillAppear method here
-    
-    
-    //////////////////////////////////////
-    
-    
-    
-    //TODO" Make a viewDidDisappear method here
-    
-    
-    
-    //////////////////////////////////////
-    
+
+
     
     //TODO: Put your Table View Datasource pragma mark here
     
@@ -105,10 +93,7 @@ class ChatViewController: UIViewController {
     @IBAction func sendPressed(sender: AnyObject) {
         
         
-        //Create a new Parse object and set its fields
-        
-        
-        //Send the message to Parse and save it in our database
+        //TODO: Send the message to Firebase and save it in our database
         
         
     }
@@ -129,26 +114,5 @@ class ChatViewController: UIViewController {
     }
     
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        
-        //TODO: Schedule the timer here
-        
-        
-        ///////////////////////////////
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        //TODO: Invalidate the timer here
-        
-        
-        ////////////////////////////////
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
 }

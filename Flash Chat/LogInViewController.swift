@@ -25,14 +25,9 @@ class LogInViewController: UIViewController {
 
    
     @IBAction func logInPressed(sender: AnyObject) {
-        
-        //TODO: Check if the textfields all contain text
-        
+
         
         //TODO: Log in the user
-        
-        
-        //If successful, send them to the ChatViewController
         
         
     }
