@@ -2,7 +2,7 @@
 //  RegisterViewController.swift
 //  Flash Chat
 //
-//  This is the View Controller which registers new users with Parse
+//  This is the View Controller which registers new users with Firebase
 //
 
 import UIKit

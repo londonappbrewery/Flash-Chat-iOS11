@@ -86,7 +86,7 @@ class ChatViewController: UIViewController {
     ///////////////////////////////////////////
     
     
-    //MARK: - Send & Recieve from Parse
+    //MARK: - Send & Recieve from Firebase
     
     
     
