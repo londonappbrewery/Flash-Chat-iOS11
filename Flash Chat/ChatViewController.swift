@@ -40,15 +40,11 @@ class ChatViewController: UIViewController {
         //TODO: Register your MessageCell.xib file here:
 
         
-
-      
-        
-        ///////////////////////////////////
     }
 
-
+    ///////////////////////////////////////////
     
-    //TODO: Put your Table View Datasource pragma mark here
+    //MARK: - TableView DataSource Methods
     
     
     
@@ -68,8 +64,9 @@ class ChatViewController: UIViewController {
     
     
     
-    
     ///////////////////////////////////////////
+    
+    //MARK:- TextField Delegate Methods
     
     
 
@@ -90,7 +87,9 @@ class ChatViewController: UIViewController {
     
     
     
-    @IBAction func sendPressed(sender: AnyObject) {
+    
+    
+    @IBAction func sendPressed(_ sender: AnyObject) {
         
         
         //TODO: Send the message to Firebase and save it in our database
@@ -101,12 +100,11 @@ class ChatViewController: UIViewController {
     //TODO: Create the retrieveMessages method here:
     
     
-    
-    ////////////////////////////////////////////////
-    
+
     
     
-    @IBAction func logOutPressed(sender: AnyObject) {
+    
+    @IBAction func logOutPressed(_ sender: AnyObject) {
         
         //TODO: Log out the user and send them back to WelcomeViewController
         

@@ -24,7 +24,7 @@ class LogInViewController: UIViewController {
     }
 
    
-    @IBAction func logInPressed(sender: AnyObject) {
+    @IBAction func logInPressed(_ sender: AnyObject) {
 
         
         //TODO: Log in the user

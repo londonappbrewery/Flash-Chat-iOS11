@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
     
 
   
-    @IBAction func registerPressed(sender: AnyObject) {
+    @IBAction func registerPressed(_ sender: AnyObject) {
         
 
         
