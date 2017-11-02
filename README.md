@@ -5,7 +5,7 @@ Beginner: Download the starter project files as .zip and extract the files to yo
 
 Pro: Git clone to your Xcode projects folder.
 
-##Podfile Configuration
+## Podfile Configuration
 ```
 post_install do |installer|
     installer.pods_project.targets.each do |target|
