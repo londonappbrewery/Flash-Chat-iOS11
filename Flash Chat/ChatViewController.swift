@@ -29,6 +29,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.dataSource = self
         messageTextfield.delegate = self
         
+        // Register for keyboard show/hide notifications
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow),
@@ -44,7 +45,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         )
         
         //TODO: Set the tapGesture here:
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        messageTableView.addGestureRecognizer(tapGesture)
         
 
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
@@ -74,7 +76,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //TODO: Declare tableViewTapped here:
-
+    @objc func tableViewTapped() {
+        messageTextfield.endEditing(true)
+    }
     
     
     //TODO: Declare configureTableView here:
