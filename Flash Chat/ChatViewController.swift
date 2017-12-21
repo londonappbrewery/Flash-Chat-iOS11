@@ -11,10 +11,8 @@ import Firebase
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
-    // Declare instance variables here
-    let messageArray = ["first message", "second message is the longest message in the chat history to ensure that cells are resized to fit long messages", "third message"]
+    var messageArray :[Message] = [Message]()
     
-    // We've pre-linked the IBOutlets
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var messageTextfield: UITextField!
@@ -44,7 +42,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             object: nil
         )
         
-        //TODO: Set the tapGesture here:
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
         messageTableView.addGestureRecognizer(tapGesture)
         
@@ -52,36 +49,29 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
         configureTableView()
-        
+        retrieveMessages()
     }
 
     ///////////////////////////////////////////
     
     //MARK: - TableView DataSource Methods
     
-    
-    
-    //TODO: Declare cellForRowAtIndexPath here:
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
-        cell.messageBody.text = messageArray[indexPath.row]
+        cell.messageBody.text = messageArray[indexPath.row].messageBody
+        cell.senderUsername.text = messageArray[indexPath.row].sender
+        cell.avatarImageView.image = #imageLiteral(resourceName: "egg")
         return cell
     }
     
-    
-    //TODO: Declare numberOfRowsInSection here:
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageArray.count
     }
     
-    
-    //TODO: Declare tableViewTapped here:
     @objc func tableViewTapped() {
         messageTextfield.endEditing(true)
     }
     
-    
-    //TODO: Declare configureTableView here:
     func configureTableView() {
         messageTableView.rowHeight = UITableViewAutomaticDimension
         messageTableView.estimatedRowHeight = 120
@@ -92,15 +82,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     ///////////////////////////////////////////
     
     //MARK:- TextField Delegate Methods
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        heightConstraint.constant = 308
-//        view.layoutIfNeeded()
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
     
     @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
@@ -120,25 +101,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.view.layoutIfNeeded()
         }
     }
-
-    
-    //TODO: Declare textFieldDidBeginEditing here:
-    
-    
-    
-    
-    //TODO: Declare textFieldDidEndEditing here:
-    
-
     
     ///////////////////////////////////////////
     
     
     //MARK: - Send & Recieve from Firebase
-    
-    
-    
-    
     
     @IBAction func sendPressed(_ sender: AnyObject) {
         
@@ -165,16 +132,26 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    //TODO: Create the retrieveMessages method here:
-    
-    
-
-    
-    
+    func retrieveMessages() {
+        let messageDB = Database.database().reference().child("messages")
+        messageDB.observe(.childAdded) { (snapshot) in
+            
+            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            let text = snapshotValue["MessageBody"]!
+            let sender = snapshotValue["Sender"]!
+            
+            let message = Message()
+            message.messageBody = text
+            message.sender = sender
+            
+            self.messageArray.append(message)
+            
+            self.configureTableView()
+            self.messageTableView.reloadData()
+        }
+    }
     
     @IBAction func logOutPressed(_ sender: AnyObject) {
-        
-        //Log out the user and send them back to WelcomeViewController
         do {
             try Auth.auth().signOut()
             navigationController?.popToRootViewController(animated: true)
